@@ -1,0 +1,9 @@
+---
+  -
+    targets:
+    {% for host in groups ['all'] %}
+  - "{{ host }}:9100"
+    {% endfor %}
+labels:
+      team: "infra"
+      job: "node"

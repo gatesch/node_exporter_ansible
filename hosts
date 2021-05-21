@@ -1,0 +1,3 @@
+[all]
+drc2prome01	ansible_ssh_host=10.220.199.74
+drc2prome02	ansible_ssh_host=10.220.199.75

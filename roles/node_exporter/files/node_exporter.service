@@ -1,0 +1,10 @@
+[Unit]
+Description=Node Exporter
+After=network-online.target
+
+[Service]
+User=prometheus
+ExecStart=/opt/prometheus/node_exporter-1.1.2.linux-amd64/node_exporter 
+
+[Install]
+WantedBy=multi-user.target
