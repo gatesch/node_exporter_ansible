@@ -1,5 +1,15 @@
 ---
 # tasks file for node_exporter
+- name: create prometheus user
+  ansible.builtin.user:
+    name: prometheus
+ 
+- name: create prometheus dir
+  ansible.builtin.file:
+    path: /opt/prometheus
+    state: directory
+    mode: 0755
+
 - name: copy prometheus binary
   ansible.builtin.unarchive:
     src: node_exporter-1.1.2.linux-amd64.tar.gz
@@ -20,6 +30,7 @@
     enabled: yes
 
 - name: modify filesd based on inventory
+  when: inventory_hostname in groups['monitoring']
   template:
     src: filesd.yml.j2
     dest: /opt/prometheus/prometheus/filesd.yml
