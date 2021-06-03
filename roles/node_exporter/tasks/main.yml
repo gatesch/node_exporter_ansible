@@ -29,6 +29,12 @@
     state: started
     enabled: yes
 
+- name: modify hosts file based on inventory
+  when: inventory_hostname in groups['monitoring']
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+
 - name: modify filesd based on inventory
   when: inventory_hostname in groups['monitoring']
   template:

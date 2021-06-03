@@ -4,6 +4,8 @@ drc2prome02	ansible_ssh_host=10.220.199.75
 drc2elastic01	ansible_ssh_host=10.220.199.71
 drc2elastic02	ansible_ssh_host=10.220.199.72
 drc2elastic03	ansible_ssh_host=10.220.199.73
+drc2cbsdevcsr01 ansible_ssh_host=10.82.76.51
+drc2cbssitcsr01 ansible_ssh_host=10.82.76.66
 
 [monitoring]
 drc2prome01     ansible_ssh_host=10.220.199.74
